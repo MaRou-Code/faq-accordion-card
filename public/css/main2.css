@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "Kumbh Sans";
+  src: url("./public/fonts/KumbhSans-Regular.ttf") format("truetype");
+}
+body {
+  font-family: "Kumbh Sans", Arial, sans-serif;
+  font-size: 12px;
+  margin: 0;
+  background: #af67e9;
+  background: linear-gradient(180deg, #af67e9 0%, #6565e7 100%);
+  height: 100vh;
+}
+
+.vertical-align {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.horizontal-align {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  height: 600px;
+  width: 800px;
+  background-color: white;
+  border-radius: 30px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "img faq";
+}
+.card__img-cont {
+  grid-area: img;
+  position: relative;
+}
+.card__img-cont > img {
+  position: absolute;
+}
+.card__faq-cont {
+  grid-area: faq;
+}
+
+.footer {
+  font-size: 11px;
+  text-align: center;
+}
+
+.footer a {
+  color: #3e52a3;
+}
