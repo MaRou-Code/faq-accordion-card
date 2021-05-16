@@ -1,11 +1,11 @@
 body {
   font-family: "Kumbh Sans", sans-serif;
   font-size: 12px;
-  color: #4a4b5e;
-  height: 100vh;
+  color: #1d1e35;
   margin: 0;
-  background: #af67e9;
+  height: 100vh;
   background: linear-gradient(180deg, #af67e9 0%, #6565e7 100%);
+  box-sizing: border-box;
 }
 
 .vertical-align {
@@ -20,58 +20,94 @@ body {
   justify-content: center;
 }
 
-.super-container {
-  position: relative;
-}
-
 .card {
+  position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 475px auto;
   grid-template-areas: "img faq";
-  background-color: white;
   width: 950px;
+  max-width: 88%;
   height: 500px;
-  overflow: hidden;
+  background-color: white;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(74, 75, 94, 0.8);
 }
-@media screen and (max-width: 1058px) {
+@media screen and (max-width: 930px) {
   .card {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: "faq";
-    width: 300px;
+    grid-template-rows: 100px auto;
+    grid-template-areas: "img" "faq";
+    width: 60%;
+    min-width: 300px;
   }
 }
 .card__img-cont {
-  position: relative;
   grid-area: img;
-  background: right 70px center url("../img/illustration-woman-online-desktop.svg"), right 70px bottom -150px url("../img/bg-pattern-desktop.svg");
+  background: right 70px center url("../../img/illustration-woman-online-desktop.svg"), right 70px bottom -150px url("../../img/bg-pattern-desktop.svg");
   background-repeat: no-repeat;
 }
-@media screen and (max-width: 1058px) {
+@media screen and (max-width: 930px) {
   .card__img-cont {
-    background: url("../img/bg-pattern-mobile.svg");
+    margin-top: -120px;
+    background: top 10px right 60% url("../../img/illustration-woman-online-mobile.svg"), top 110px center url("../../img/bg-pattern-mobile.svg");
+    background-repeat: no-repeat;
   }
 }
 .card__img-cont--desktop {
   position: absolute;
-}
-.card__img-cont--desktop#box-img {
   bottom: 23%;
   left: -94px;
   z-index: 5;
+}
+@media screen and (max-width: 930px) {
+  .card__img-cont--desktop {
+    display: none;
+  }
+}
+.card__img-cont--mobile {
+  display: none;
+}
+@media screen and (max-width: 930px) {
+  .card__img-cont--mobile {
+    display: block;
+    position: absolute;
+    transform-origin: center;
+  }
+  .card__img-cont--mobile#mobile-woman {
+    top: -110px;
+    left: 25%;
+    z-index: 5;
+  }
+  .card__img-cont--mobile#mobile-bg {
+    left: 30%;
+    z-index: 4;
+  }
 }
 .card__faq-cont {
   grid-area: faq;
 }
 
 .faq {
-  box-sizing: border-box;
   padding: 50px 90px 50px 0;
+}
+@media screen and (max-width: 930px) {
+  .faq {
+    padding: 0 20px 30px 20px;
+  }
+}
+.faq > h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+@media screen and (max-width: 930px) {
+  .faq > h1 {
+    text-align: center;
+  }
 }
 .faq__panel {
   border-bottom: 2px solid #e7e7e9;
+  color: #4a4b5e;
 }
 .faq__panel:hover {
   cursor: pointer;
@@ -80,31 +116,41 @@ body {
   display: flex;
   justify-content: space-between;
 }
+.faq__panel__question:active {
+  color: #f47c57;
+}
+.faq__panel__arrow {
+  box-sizing: border-box;
+  height: 0.2rem;
+  width: 0.2rem;
+  border: solid #f47c57;
+  border-width: 0 2px 2px 0;
+  padding: 3px;
+  transform: rotate(45deg) translateY(15px);
+}
 .faq__panel__answer {
   display: none;
+  color: #787887;
 }
 .faq__panel--opened > .faq__panel__question {
   font-weight: 700;
 }
+.faq__panel--opened > .faq__panel__question > p {
+  margin-bottom: 0;
+}
 .faq__panel--opened > .faq__panel__answer {
   display: block;
 }
-.faq__panel--opened .arrow {
-  transform: rotate(-135deg) translateY(-15px);
+.faq__panel--opened .faq__panel__arrow {
+  transform: rotate(-135deg) translateY(-20px) translateX(-5px);
 }
 
-.arrow {
-  box-sizing: border-box;
-  height: 0.1rem;
-  width: 0.1rem;
-  border: solid #f47c57;
-  border-width: 0 2px 2px 0;
-  display: inline;
-  padding: 3px;
-  transform: rotate(45deg) translateY(15px);
-  text-align: right;
+footer {
+  height: 2vh;
+  font-size: 11px;
+  text-align: center;
+  color: white;
 }
-
-h1 {
-  margin-bottom: 20px;
+footer a {
+  color: #f0f047;
 }
