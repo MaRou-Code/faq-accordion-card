@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL](https://github.com/MaRou-Code/faq-accordion-card)
+- [Live Site URL](https://marou-code.github.io/faq-accordion-card/)
 
 ## My process
 
